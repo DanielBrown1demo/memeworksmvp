@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 270 100% 98%;
+    --foreground: 270 60% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 270 60% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 60% 10%;
+    --primary: 270 95% 64%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 100% 36%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 270 20% 90%;
+    --muted-foreground: 270 30% 40%;
+    --accent: 165 100% 21%;
+    --accent-foreground: 165 47% 75%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 270 30% 90%;
+    --input: 270 30% 90%;
+    --ring: 270 95% 64%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 270 60% 5%;
+    --foreground: 270 20% 98%;
+    --card: 270 60% 8%;
+    --card-foreground: 270 20% 98%;
+    --popover: 270 60% 8%;
+    --popover-foreground: 270 20% 98%;
+    --primary: 270 95% 64%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 100% 36%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 270 40% 20%;
+    --muted-foreground: 270 20% 70%;
+    --accent: 165 100% 21%;
+    --accent-foreground: 165 47% 75%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 270 40% 20%;
+    --input: 270 40% 20%;
+    --ring: 270 95% 64%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: radial-gradient(
+      circle at center,
+      hsl(var(--background)),
+      hsl(var(--background)) 60%,
+      hsl(270, 100%, 36%, 0.2)
+    );
+    min-height: 100vh;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#A84DF9] to-[#6600B9];
+}
+
+.gradient-button {
+  @apply bg-gradient-to-r from-[#A84DF9] to-[#6600B9] hover:from-[#6600B9] hover:to-[#A84DF9] text-white transition-all duration-300;
+}
